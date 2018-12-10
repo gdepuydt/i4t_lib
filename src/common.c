@@ -1,6 +1,11 @@
 #define MAX(x, y) ((x) > (y) ? (x) : (y))
 #define IS_POW2(x) (((x) != 0) && ((x) & ((x)-1)) == 0)
 
+//generate random float numbers based on c stdlib rnd() function
+#define RND() ((float)rand() / (float)(RAND_MAX))
+#define RNDX(x) (RND()*(x))
+#define RNDRNG(x, y) (RNDX((y) - (x)) + (x))
+
 #define ALIGN_DOWN(n, a) ((n) & ~((a) - 1))
 #define ALIGN_UP(n, a) ALIGN_DOWN((n) + (a) - 1, (a))
 #define ALIGN_DOWN_PTR(p, a) ((void *)ALIGN_DOWN((uintptr_t)(p), (a)))

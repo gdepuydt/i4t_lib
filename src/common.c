@@ -14,6 +14,7 @@ void *xcalloc(size_t num_elems, size_t elem_size) {
 		perror("xcalloc failed");
 		exit(1);
 	}
+	return ptr;
 }
 
 void *xrealloc(void *ptr, size_t num_bytes) {
@@ -281,5 +282,3 @@ const char *str_intern_range(const char *start, const char *end) {
 const char *str_intern(const char *str) {
 	return str_intern_range(str, str + strlen(str));
 }
-
-//this works just fine
